@@ -21,4 +21,6 @@ public interface UserMapper {
     void updateUser(UserDto userDto);
 
     void deleteUser(String userId);
+
+//    UserDto loginUserById(String userId);
 }

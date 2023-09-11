@@ -8,30 +8,35 @@
     <!--  // parameterType을 Dto로 설정해 한번에 묶어서 보낸다 -->
     <!-- 회원 생성 -->
     <insert id="insertUser" parameterType="yujinns.bloguser.dto.UserDto">
-        INSERT INTO yujinns_user (id, user_id, password, nickname, email)
+        INSERT INTO yujinns_user1 (id, user_id, password, nickname, email)
         VALUES (user_seq.nextval, #{userId}, #{password}, #{nickname}, #{email})
     </insert>
 
     <!-- 회원 조회 by userId -->
     <select id="getUserById" parameterType="java.lang.String" resultType="yujinns.bloguser.dto.UserDto">
-        SELECT * FROM yujinns_user WHERE user_id = #{userId}
+        SELECT * FROM yujinns_user1 WHERE user_id = #{userId}
     </select>
 
     <!-- 모든 회원 조회 -->
     <select id="getAllUsers" resultType="yujinns.bloguser.dto.UserDto">
-        SELECT * FROM yujinns_user
+        SELECT * FROM yujinns_user1
+    </select>
+
+    <!-- 로그인 -->
+    <select id="loginUserById" resultType="yujinns.bloguser.dto.UserDto">
+        SELECT * FROM yujinns_user1 WHERE user_id = #{userId}
     </select>
 
     <!-- 회원 정보 업데이트 -->
     <update id="updateUser" parameterType="yujinns.bloguser.dto.UserDto">
-        UPDATE yujinns_user
+        UPDATE yujinns_user1
         SET password = #{password}, nickname = #{nickname}, email = #{email}
         WHERE user_id = #{userId}
     </update>
 
     <!-- 회원 삭제 by userId -->
     <delete id="deleteUser" parameterType="string">
-        DELETE FROM yujinns_user WHERE user_id = #{userId}
+        DELETE FROM yujinns_user1 WHERE user_id = #{userId}
     </delete>
 
 </mapper>

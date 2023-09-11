@@ -31,4 +31,8 @@ public class UserService {
     public void deleteUser(String userId) {
         userMapper.deleteUser(userId);
     }
+
+//    public UserDto loginUserById(String userId) {
+//        return userMapper.loginUserById(userId);
+//    }
 }
