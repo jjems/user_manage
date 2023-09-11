@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>User Page</title>
+</head>
+<body>
+<h1>User Details</h1>
+<p>User ID: <span th:text="${userDto.userId}"></span></p>
+<p>Password: <span th:text="${userDto.password}"></span></p>
+<p>Nickname: <span th:text="${userDto.nickname}"></span></p>
+<p>Email: <span th:text="${userDto.email}"></span></p>
+<a th:href="@{'/update/' + ${userDto.userId}}">변경</a>
+<a th:href="@{'/delete/' + ${userDto.userId}}">삭제</a>
+</body>
+</html>
