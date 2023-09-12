@@ -32,7 +32,7 @@ public class UserService {
         userMapper.deleteUser(userId);
     }
 
-//    public UserDto loginUserById(String userId) {
-//        return userMapper.loginUserById(userId);
-//    }
+    public List<UserDto> searchUsers(String nickname) {
+        return userMapper.getUsersByNickname(nickname);
+    }
 }
