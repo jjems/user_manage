@@ -118,4 +118,11 @@ public class UserController {
         userService.deleteUser(userDto.getUserId());
         return "redirect:/list";
     }
+
+    @GetMapping("/search")
+    public String searchUsers(@RequestParam("query") String query, Model model) {
+        List<UserDto> searchResults = userService.searchUsers(query);
+        model.addAttribute("userList", searchResults);
+        return "list";
+    }
 }

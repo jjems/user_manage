@@ -22,5 +22,5 @@ public interface UserMapper {
 
     void deleteUser(String userId);
 
-//    UserDto loginUserById(String userId);
+    List<UserDto> getUsersByNickname(String nickname);
 }

@@ -39,4 +39,9 @@
         DELETE FROM yujinns_user1 WHERE user_id = #{userId}
     </delete>
 
+    <!-- 닉네임으로 사용자 검색 -->
+    <select id="getUsersByNickname" parameterType="java.lang.String" resultType="yujinns.bloguser.dto.UserDto">
+        SELECT * FROM yujinns_user1  WHERE nickname LIKE '%' || #{nickname} || '%'
+    </select>
+
 </mapper>
